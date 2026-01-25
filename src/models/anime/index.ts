@@ -1,0 +1,6 @@
+export * from './anime.model'
+export * from './character-staff.model'
+export * from './episode.model'
+export * from './review.model'
+export * from './statistics.model'
+export * from './videos.model'
