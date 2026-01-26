@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "prepare": "git config core.hookspath .githooks",
-    "build": "bun bun.build.js",
+    "build": "bun bun.build.ts",
     "prepublishOnly": "bun run build",
     "test:dev": "bun test",
     "test:coverage": "bun test --coverage",
