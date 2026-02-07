@@ -1,6 +1,20 @@
 import type { ClientOptions } from './base.client'
 import { AnimeClient } from './anime.client'
 import { MangaClient } from './manga.client'
+import { CharactersClient } from './characters.client'
+import { ClubsClient } from './clubs.client'
+import { GenresClient } from './genres.client'
+import { MagazinesClient } from './magazines.client'
+import { PeopleClient } from './people.client'
+import { ProducersClient } from './producers.client'
+import { RandomClient } from './random.client'
+import { RecommendationsClient } from './recommendations.client'
+import { ReviewsClient } from './reviews.client'
+import { SchedulesClient } from './schedules.client'
+import { SeasonsClient } from './seasons.client'
+import { TopClient } from './top.client'
+import { UsersClient } from './users.client'
+import { WatchClient } from './watch.client'
 import { createHttpCacheInstance } from '../config/http.client'
 import type { AxiosCacheInstance } from 'axios-cache-interceptor'
 
@@ -38,6 +52,76 @@ export class JikanClient {
 	 * Access manga data, characters, news, reviews, etc.
 	 */
 	public readonly manga: MangaClient
+
+	/**
+	 * Client for character-related endpoints.
+	 */
+	public readonly characters: CharactersClient
+
+	/**
+	 * Client for club-related endpoints.
+	 */
+	public readonly clubs: ClubsClient
+
+	/**
+	 * Client for genre-related endpoints.
+	 */
+	public readonly genres: GenresClient
+
+	/**
+	 * Client for magazine-related endpoints.
+	 */
+	public readonly magazines: MagazinesClient
+
+	/**
+	 * Client for people-related endpoints.
+	 */
+	public readonly people: PeopleClient
+
+	/**
+	 * Client for producer-related endpoints.
+	 */
+	public readonly producers: ProducersClient
+
+	/**
+	 * Client for random resource endpoints.
+	 */
+	public readonly random: RandomClient
+
+	/**
+	 * Client for recommendations endpoints.
+	 */
+	public readonly recommendations: RecommendationsClient
+
+	/**
+	 * Client for reviews endpoints.
+	 */
+	public readonly reviews: ReviewsClient
+
+	/**
+	 * Client for schedule-related endpoints.
+	 */
+	public readonly schedules: SchedulesClient
+
+	/**
+	 * Client for season-related endpoints.
+	 */
+	public readonly seasons: SeasonsClient
+
+	/**
+	 * Client for top-ranked endpoints.
+	 */
+	public readonly top: TopClient
+
+	/**
+	 * Client for user-related endpoints.
+	 */
+	public readonly users: UsersClient
+
+	/**
+	 * Client for watch-related endpoints.
+	 */
+	public readonly watch: WatchClient
 
 	/**
 	 * Shared axios cache instance used by all resource clients.
@@ -93,22 +177,20 @@ export class JikanClient {
 
 		this.anime = new AnimeClient(clientConfig)
 		this.manga = new MangaClient(clientConfig)
-
-		// TODO: Initialize other resource clients as they are implemented
-		// this.characters = new CharactersClient(clientConfig)
-		// this.people = new PeopleClient(clientConfig)
-		// this.clubs = new ClubsClient(clientConfig)
-		// this.genres = new GenresClient(clientConfig)
-		// this.magazines = new MagazinesClient(clientConfig)
-		// this.producers = new ProducersClient(clientConfig)
-		// this.random = new RandomClient(clientConfig)
-		// this.recommendations = new RecommendationsClient(clientConfig)
-		// this.reviews = new ReviewsClient(clientConfig)
-		// this.schedules = new SchedulesClient(clientConfig)
-		// this.seasons = new SeasonsClient(clientConfig)
-		// this.top = new TopClient(clientConfig)
-		// this.users = new UsersClient(clientConfig)
-		// this.watch = new WatchClient(clientConfig)
+		this.characters = new CharactersClient(clientConfig)
+		this.clubs = new ClubsClient(clientConfig)
+		this.genres = new GenresClient(clientConfig)
+		this.magazines = new MagazinesClient(clientConfig)
+		this.people = new PeopleClient(clientConfig)
+		this.producers = new ProducersClient(clientConfig)
+		this.random = new RandomClient(clientConfig)
+		this.recommendations = new RecommendationsClient(clientConfig)
+		this.reviews = new ReviewsClient(clientConfig)
+		this.schedules = new SchedulesClient(clientConfig)
+		this.seasons = new SeasonsClient(clientConfig)
+		this.top = new TopClient(clientConfig)
+		this.users = new UsersClient(clientConfig)
+		this.watch = new WatchClient(clientConfig)
 	}
 
 	/**
