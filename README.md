@@ -127,21 +127,23 @@ const animeClient = new AnimeClient({
 |-------------------------------|--------------|-----------|
 | **AnimeClient**               | ✅ Complete   | 21/21     |
 | **MangaClient**               | ✅ Complete   | 14/14     |
-| **CharactersClient**          | ⏳ Upcoming   | 0/7       |
-| **PeopleClient**              | ⏳ Upcoming   | 0/6       |
-| **ClubsClient**               | ⏳ Upcoming   | 0/5       |
-| **GenresClient**              | ⏳ Upcoming   | 0/2       |
-| **MagazinesClient**           | ⏳ Upcoming   | 0/1       |
-| **ProducersClient**           | ⏳ Upcoming   | 0/3       |
-| **RandomClient**              | ⏳ Upcoming   | 0/5       |
-| **RecommendationsClient**     | ⏳ Upcoming   | 0/2       |
-| **ReviewsClient**             | ⏳ Upcoming   | 0/2       |
-| **SchedulesClient**           | ⏳ Upcoming   | 0/1       |
-| **SeasonsClient**             | ⏳ Upcoming   | 0/4       |
-| **TopClient**                 | ⏳ Upcoming   | 0/5       |
-| **UsersClient**               | ⏳ Upcoming   | 0/13      |
-| **WatchClient**               | ⏳ Upcoming   | 0/4       |
+| **CharactersClient**          | ✅ Complete   | 7/7       |
+| **PeopleClient**              | ✅ Complete   | 6/6       |
+| **ClubsClient**               | ✅ Complete   | 5/5       |
+| **GenresClient**              | ✅ Complete   | 2/2       |
+| **MagazinesClient**           | ✅ Complete   | 1/1       |
+| **ProducersClient**           | ✅ Complete   | 3/3       |
+| **RandomClient**              | ✅ Complete   | 5/5       |
+| **RecommendationsClient**     | ✅ Complete   | 2/2       |
+| **ReviewsClient**             | ✅ Complete   | 2/2       |
+| **SchedulesClient**           | ✅ Complete   | 1/1       |
+| **SeasonsClient**             | ✅ Complete   | 4/4       |
+| **TopClient**                 | ✅ Complete   | 4/4       |
+| **UsersClient**               | ✅ Complete   | 14/14     |
+| **WatchClient**               | ✅ Complete   | 4/4       |
 | **JikanClient** (Main client) | ✅ Complete   | -         |
+
+**Overall Progress**: 101/101 endpoints (100%)
 
 ## Usage Examples
 
