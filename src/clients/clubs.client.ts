@@ -30,11 +30,7 @@ export class ClubsClient extends BaseClient {
 	 * @param params
 	 */
 	public getClubMembers(id: number, params: Partial<{ page: number }> = {}) {
-		return this.getResource<ClubMember[]>(
-			clubEndpoints.members,
-			{ id },
-			params
-		)
+		return this.getResource<ClubMember[]>(clubEndpoints.members, { id }, params)
 	}
 
 	/**

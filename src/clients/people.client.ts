@@ -39,10 +39,9 @@ export class PeopleClient extends BaseClient {
 	 * @param id The Person ID
 	 */
 	public getPersonAnime(id: number) {
-		return this.getResource<PeopleAnimePosition[]>(
-			peopleEndpoints.anime,
-			{ id }
-		)
+		return this.getResource<PeopleAnimePosition[]>(peopleEndpoints.anime, {
+			id
+		})
 	}
 
 	/**
@@ -50,10 +49,9 @@ export class PeopleClient extends BaseClient {
 	 * @param id The Person ID
 	 */
 	public getPersonVoices(id: number) {
-		return this.getResource<PeopleVoiceActingRole[]>(
-			peopleEndpoints.voices,
-			{ id }
-		)
+		return this.getResource<PeopleVoiceActingRole[]>(peopleEndpoints.voices, {
+			id
+		})
 	}
 
 	/**
@@ -61,10 +59,9 @@ export class PeopleClient extends BaseClient {
 	 * @param id The Person ID
 	 */
 	public getPersonManga(id: number) {
-		return this.getResource<PeopleMangaPosition[]>(
-			peopleEndpoints.manga,
-			{ id }
-		)
+		return this.getResource<PeopleMangaPosition[]>(peopleEndpoints.manga, {
+			id
+		})
 	}
 
 	/**
@@ -72,10 +69,7 @@ export class PeopleClient extends BaseClient {
 	 * @param id The Person ID
 	 */
 	public getPersonPictures(id: number) {
-		return this.getResource<Images[]>(
-			peopleEndpoints.pictures,
-			{ id }
-		)
+		return this.getResource<Images[]>(peopleEndpoints.pictures, { id })
 	}
 
 	/**
@@ -83,10 +77,6 @@ export class PeopleClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 */
 	public getPeopleSearch(searchParams?: Partial<PeopleSearchParams>) {
-		return this.getResource<People[]>(
-			peopleEndpoints.search,
-			{},
-			searchParams
-		)
+		return this.getResource<People[]>(peopleEndpoints.search, {}, searchParams)
 	}
 }

@@ -12,7 +12,7 @@ describe('MangaClient', () => {
 	// Prevent rate-limit errors. See: https://docs.api.jikan.moe/#section/Information/Rate-Limiting
 	// Jikan allows 3 requests per second, 60 per minute
 	beforeEach(async () => {
-		await new Promise((resolve) => setTimeout(resolve, 1000))
+		await new Promise(resolve => setTimeout(resolve, 1000))
 	})
 
 	it('should be instantiated correctly', () => {

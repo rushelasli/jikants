@@ -1,3 +1,4 @@
+import { animeEndpoints } from '../endpoints/anime.endpoints'
 import type {
 	Anime,
 	AnimeFull,
@@ -10,15 +11,14 @@ import type {
 	News,
 	Recommendation
 } from '../models'
-import { animeEndpoints } from '../endpoints/anime.endpoints'
 import { BaseClient } from './base.client'
 
 /**
  * Anime resource client for accessing all anime-related endpoints.
- * 
+ *
  * Provides methods to fetch anime data, characters, staff, episodes,
  * news, forum topics, videos, pictures, statistics, and more.
- * 
+ *
  * @example
  * ```typescript
  * const client = new AnimeClient();
@@ -29,10 +29,10 @@ import { BaseClient } from './base.client'
 export class AnimeClient extends BaseClient {
 	/**
 	 * Get complete anime resource data including relations, theme songs, and external links.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to complete anime data
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const anime = await client.getAnimeFullById(1);
@@ -46,10 +46,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get anime resource with basic information.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime data
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const anime = await client.getAnimeById(1);
@@ -63,10 +63,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get characters and their voice actors for a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to array of anime characters with voice actors
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const characters = await client.getAnimeCharacters(1);
@@ -81,10 +81,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get staff members who worked on a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to array of anime staff
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const staff = await client.getAnimeStaff(1);
@@ -99,11 +99,11 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get a paginated list of episodes for a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated episode list
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const episodes = await client.getAnimeEpisodes(1, 1);
@@ -121,11 +121,11 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get a single episode by its episode number.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param episode - Episode number
 	 * @returns Promise resolving to episode data
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const episode = await client.getAnimeEpisodeById(1, 1);
@@ -139,11 +139,11 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get news articles related to a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated news articles
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const news = await client.getAnimeNews(1, 1);
@@ -165,11 +165,11 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get forum topics related to a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param filter - Optional filter for topic type ('all', 'episode', 'other')
 	 * @returns Promise resolving to forum topics
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const forum = await client.getAnimeForum(1, 'episode');
@@ -191,10 +191,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get videos related to the anime (promotional videos, music videos, episodes).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime videos
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const videos = await client.getAnimeVideos(1);
@@ -208,11 +208,11 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get episode videos for a specific anime with pagination.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated episode videos
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const videos = await client.getAnimeVideosEpisodes(1, 1);
@@ -231,10 +231,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get pictures/images related to the anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime pictures
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const pictures = await client.getAnimePictures(1);
@@ -249,10 +249,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get statistics for a specific anime (watching, completed, dropped, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime statistics
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const stats = await client.getAnimeStatistics(1);
@@ -267,10 +267,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get additional information about the anime (trivia, notes, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to more info
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const info = await client.getAnimeMoreInfo(1);
@@ -283,10 +283,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get user recommendations for similar anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime recommendations
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const recs = await client.getAnimeRecommendations(1);
@@ -298,19 +298,18 @@ export class AnimeClient extends BaseClient {
 	public async getAnimeRecommendations(
 		id: number
 	): Promise<JikanResponse<Recommendation[]>> {
-		return this.getResource<Recommendation[]>(
-			animeEndpoints.recommendations,
-			{ id }
-		)
+		return this.getResource<Recommendation[]>(animeEndpoints.recommendations, {
+			id
+		})
 	}
 
 	/**
 	 * Get recent user updates for this anime (users adding/updating their list).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated user updates
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const updates = await client.getAnimeUserUpdates(1, 1);
@@ -329,13 +328,13 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get user reviews for a specific anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @param page - Page number (default: 1)
 	 * @param preliminary - Include preliminary reviews (default: undefined)
 	 * @param spoilers - Include spoiler reviews (default: undefined)
 	 * @returns Promise resolving to paginated reviews
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const reviews = await client.getAnimeReviews(1, 1, true);
@@ -354,15 +353,19 @@ export class AnimeClient extends BaseClient {
 		if (preliminary !== undefined) params.preliminary = preliminary
 		if (spoilers !== undefined) params.spoilers = spoilers
 
-		return this.getResourceWithPagination(animeEndpoints.reviews, { id }, params)
+		return this.getResourceWithPagination(
+			animeEndpoints.reviews,
+			{ id },
+			params
+		)
 	}
 
 	/**
 	 * Get related anime and manga entries (sequels, prequels, side stories, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime relations
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const relations = await client.getAnimeRelations(1);
@@ -377,10 +380,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get opening and ending theme songs for the anime.
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to anime themes
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const themes = await client.getAnimeThemes(1);
@@ -394,10 +397,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get external links for the anime (official sites, social media, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to external links
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const links = await client.getAnimeExternal(1);
@@ -412,10 +415,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Get streaming platform links for the anime (Crunchyroll, Netflix, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList anime ID
 	 * @returns Promise resolving to streaming links
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const streaming = await client.getAnimeStreaming(1);
@@ -430,10 +433,10 @@ export class AnimeClient extends BaseClient {
 
 	/**
 	 * Search for anime with various filters and parameters.
-	 * 
+	 *
 	 * @param searchParams - Search and filter parameters
 	 * @returns Promise resolving to paginated anime search results
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const results = await client.searchAnime({

@@ -36,10 +36,7 @@ export class ProducersClient extends BaseClient {
 	 * @param id Producer ID
 	 */
 	public getProducerExternal(id: number) {
-		return this.getResource<NamedResource[]>(
-			producerEndpoints.external,
-			{ id }
-		)
+		return this.getResource<NamedResource[]>(producerEndpoints.external, { id })
 	}
 
 	/**

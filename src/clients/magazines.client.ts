@@ -15,10 +15,6 @@ export class MagazinesClient extends BaseClient {
 	 * @param params
 	 */
 	public getMagazines(params: Partial<MagazineSearchParams> = {}) {
-		return this.getResource<Magazine[]>(
-			magazineEndpoints.list,
-			{},
-			params
-		)
+		return this.getResource<Magazine[]>(magazineEndpoints.list, {}, params)
 	}
 }

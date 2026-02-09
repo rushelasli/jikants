@@ -1,10 +1,5 @@
 import { seasonEndpoints } from '../endpoints/season.endpoints'
-import type {
-	Anime,
-	AnimeSeason,
-	SeasonParams,
-	SeasonsList
-} from '../models'
+import type { Anime, AnimeSeason, SeasonParams, SeasonsList } from '../models'
 import { BaseClient } from './base.client'
 
 /**
@@ -38,11 +33,7 @@ export class SeasonsClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 */
 	public getSeasonNow(searchParams?: Partial<SeasonParams>) {
-		return this.getResource<Anime[]>(
-			seasonEndpoints.now,
-			{},
-			searchParams
-		)
+		return this.getResource<Anime[]>(seasonEndpoints.now, {}, searchParams)
 	}
 
 	/**
@@ -57,10 +48,6 @@ export class SeasonsClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 */
 	public getSeasonUpcoming(searchParams?: Partial<SeasonParams>) {
-		return this.getResource<Anime[]>(
-			seasonEndpoints.upcoming,
-			{},
-			searchParams
-		)
+		return this.getResource<Anime[]>(seasonEndpoints.upcoming, {}, searchParams)
 	}
 }

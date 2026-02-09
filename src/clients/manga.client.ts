@@ -1,3 +1,4 @@
+import { mangaEndpoints } from '../endpoints/manga.endpoints'
 import type {
 	Forum,
 	ForumFilter,
@@ -10,15 +11,14 @@ import type {
 	News,
 	Recommendation
 } from '../models'
-import { mangaEndpoints } from '../endpoints/manga.endpoints'
 import { BaseClient } from './base.client'
 
 /**
  * Manga resource client for accessing all manga-related endpoints.
- * 
+ *
  * Provides methods to fetch manga data, characters, news, forum topics,
  * pictures, statistics, reviews, relations, and more.
- * 
+ *
  * @example
  * ```typescript
  * const client = new MangaClient();
@@ -29,10 +29,10 @@ import { BaseClient } from './base.client'
 export class MangaClient extends BaseClient {
 	/**
 	 * Get complete manga resource data including relations and external links.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to complete manga data
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const manga = await client.getMangaFullById(1);
@@ -46,10 +46,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get manga resource with basic information.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to manga data
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const manga = await client.getMangaById(1);
@@ -64,10 +64,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get characters that appear in a specific manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to array of manga characters
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const characters = await client.getMangaCharacters(1);
@@ -82,11 +82,11 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get news articles related to a specific manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated news articles
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const news = await client.getMangaNews(1, 1);
@@ -108,11 +108,11 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get forum topics related to a specific manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @param filter - Optional filter for topic type ('all', 'episode', 'other')
 	 * @returns Promise resolving to forum topics
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const forum = await client.getMangaForum(1);
@@ -134,10 +134,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get pictures/images related to the manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to manga pictures
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const pictures = await client.getMangaPictures(1);
@@ -152,10 +152,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get statistics for a specific manga (reading, completed, dropped, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to manga statistics
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const stats = await client.getMangaStatistics(1);
@@ -170,10 +170,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get additional information about the manga (trivia, notes, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to more info
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const info = await client.getMangaMoreInfo(1);
@@ -186,10 +186,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get user recommendations for similar manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to manga recommendations
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const recs = await client.getMangaRecommendations(1);
@@ -201,19 +201,18 @@ export class MangaClient extends BaseClient {
 	public async getMangaRecommendations(
 		id: number
 	): Promise<JikanResponse<Recommendation[]>> {
-		return this.getResource<Recommendation[]>(
-			mangaEndpoints.recommendations,
-			{ id }
-		)
+		return this.getResource<Recommendation[]>(mangaEndpoints.recommendations, {
+			id
+		})
 	}
 
 	/**
 	 * Get recent user updates for this manga (users adding/updating their list).
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @param page - Page number (default: 1)
 	 * @returns Promise resolving to paginated user updates
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const updates = await client.getMangaUserUpdates(1, 1);
@@ -232,13 +231,13 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get user reviews for a specific manga.
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @param page - Page number (default: 1)
 	 * @param preliminary - Include preliminary reviews (default: undefined)
 	 * @param spoilers - Include spoiler reviews (default: undefined)
 	 * @returns Promise resolving to paginated reviews
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const reviews = await client.getMangaReviews(1, 1, true);
@@ -257,15 +256,19 @@ export class MangaClient extends BaseClient {
 		if (preliminary !== undefined) params.preliminary = preliminary
 		if (spoilers !== undefined) params.spoilers = spoilers
 
-		return this.getResourceWithPagination(mangaEndpoints.reviews, { id }, params)
+		return this.getResourceWithPagination(
+			mangaEndpoints.reviews,
+			{ id },
+			params
+		)
 	}
 
 	/**
 	 * Get related manga and anime entries (sequels, prequels, adaptations, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to manga relations
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const relations = await client.getMangaRelations(1);
@@ -280,10 +283,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Get external links for the manga (official sites, social media, etc.).
-	 * 
+	 *
 	 * @param id - MyAnimeList manga ID
 	 * @returns Promise resolving to external links
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const links = await client.getMangaExternal(1);
@@ -298,10 +301,10 @@ export class MangaClient extends BaseClient {
 
 	/**
 	 * Search for manga with various filters and parameters.
-	 * 
+	 *
 	 * @param searchParams - Search and filter parameters
 	 * @returns Promise resolving to paginated manga search results
-	 * 
+	 *
 	 * @example
 	 * ```typescript
 	 * const results = await client.searchManga({

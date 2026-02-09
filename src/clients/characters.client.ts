@@ -4,8 +4,8 @@ import type {
 	CharacterAnimeAppearance,
 	CharacterFull,
 	CharacterMangaAppearance,
-	CharacterVoiceActor,
 	CharacterSearchParams,
+	CharacterVoiceActor,
 	Images
 } from '../models'
 import { BaseClient } from './base.client'
@@ -23,12 +23,9 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 */
 	public getCharacterFullById(id: number) {
-		return this.getResource<CharacterFull>(
-			characterEndpoints.fullById,
-			{
-				id
-			}
-		)
+		return this.getResource<CharacterFull>(characterEndpoints.fullById, {
+			id
+		})
 	}
 
 	/**
@@ -79,10 +76,7 @@ export class CharactersClient extends BaseClient {
 	 * @param id The Character ID
 	 */
 	public getCharacterPictures(id: number) {
-		return this.getResource<Images[]>(
-			characterEndpoints.pictures,
-			{ id }
-		)
+		return this.getResource<Images[]>(characterEndpoints.pictures, { id })
 	}
 
 	/**

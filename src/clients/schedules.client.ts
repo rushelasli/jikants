@@ -15,10 +15,6 @@ export class SchedulesClient extends BaseClient {
 	 * @param searchParams Filter parameters
 	 */
 	public getSchedules(searchParams?: Partial<ScheduleParams>) {
-		return this.getResource<Anime[]>(
-			scheduleEndpoints.list,
-			{},
-			searchParams
-		)
+		return this.getResource<Anime[]>(scheduleEndpoints.list, {}, searchParams)
 	}
 }

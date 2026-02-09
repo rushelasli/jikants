@@ -1,8 +1,5 @@
 import { watchEndpoints } from '../endpoints/watch.endpoints'
-import type {
-	WatchEpisode,
-	WatchPromo
-} from '../models/watch/watch.model'
+import type { WatchEpisode, WatchPromo } from '../models/watch/watch.model'
 import { BaseClient } from './base.client'
 
 /**
@@ -41,8 +38,6 @@ export class WatchClient extends BaseClient {
 	 * @returns Popular promotional videos
 	 */
 	public getWatchPopularPromos() {
-		return this.getResource<WatchPromo[]>(
-			watchEndpoints.popularPromos
-		)
+		return this.getResource<WatchPromo[]>(watchEndpoints.popularPromos)
 	}
 }

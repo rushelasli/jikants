@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'bun:test'
-import { JikanClient } from '../clients/jikan.client'
 import { AnimeClient } from '../clients/anime.client'
+import { JikanClient } from '../clients/jikan.client'
 import { MangaClient } from '../clients/manga.client'
 
 describe('JikanClient', () => {
@@ -62,20 +62,20 @@ describe('JikanClient', () => {
 		})
 
 		it('should fetch manga through main client', async () => {
-			await new Promise((resolve) => setTimeout(resolve, 1000))
+			await new Promise(resolve => setTimeout(resolve, 1000))
 			const { data } = await client.manga.getMangaById(1)
 			expect(data.mal_id).toBe(1)
 			expect(data.title).toBeDefined()
 		})
 
 		it('should use shared cache across clients', async () => {
-			await new Promise((resolve) => setTimeout(resolve, 1000))
-			
+			await new Promise(resolve => setTimeout(resolve, 1000))
+
 			// First call - not cached
 			const anime1 = await client.anime.getAnimeById(1)
 			expect(anime1.data.mal_id).toBe(1)
 
-			await new Promise((resolve) => setTimeout(resolve, 100))
+			await new Promise(resolve => setTimeout(resolve, 100))
 
 			// Second call - should be cached (faster)
 			const anime2 = await client.anime.getAnimeById(1)

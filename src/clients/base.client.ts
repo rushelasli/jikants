@@ -136,7 +136,7 @@ export abstract class BaseClient {
 	private setupLoggingInterceptors(): void {
 		// Request interceptor
 		this.api.interceptors.request.use(
-			(config) => {
+			config => {
 				console.log('[Jikan Request]', {
 					method: config.method?.toUpperCase(),
 					url: config.url,
@@ -145,7 +145,7 @@ export abstract class BaseClient {
 				})
 				return config
 			},
-			(error) => {
+			error => {
 				console.error('[Jikan Request Error]', error)
 				return Promise.reject(error)
 			}
@@ -153,7 +153,7 @@ export abstract class BaseClient {
 
 		// Response interceptor
 		this.api.interceptors.response.use(
-			(response) => {
+			response => {
 				console.log('[Jikan Response]', {
 					status: response.status,
 					url: response.config.url,
@@ -162,7 +162,7 @@ export abstract class BaseClient {
 				})
 				return response
 			},
-			(error) => {
+			error => {
 				console.error('[Jikan Response Error]', {
 					status: error.response?.status,
 					url: error.config?.url,
