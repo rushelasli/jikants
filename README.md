@@ -8,11 +8,11 @@ Full-featured Jikan API wrapper with TypeScript support, automatic caching, and 
 
 ## Features
 
-- 💅 **Fully typed** - Complete TypeScript definitions
-- ♻️ **Auto caching** - 24-hour response cache (configurable)
-- 📦 **ESM + Tree shaking** - Lightweight and modern
-- ✅ **100% coverage** - All 101 Jikan API v4 endpoints
-- 🎯 **Clean API** - Intuitive method names
+- **Fully typed** - Complete TypeScript definitions
+- **Auto caching** - 24-hour response cache (configurable)
+- **ESM + Tree shaking** - Lightweight and modern
+- **100% coverage** - All 101 Jikan API v4 endpoints
+- **Clean API** - Intuitive method names
 
 ## Installation
 
@@ -35,8 +35,7 @@ console.log(anime.data.title); // "Cowboy Bebop"
 const results = await jikan.anime.searchAnime({
   q: 'naruto',
   type: 'TV',
-  order
-_by: 'score',
+  order_by: 'score',
   sort: 'desc'
 });
 
